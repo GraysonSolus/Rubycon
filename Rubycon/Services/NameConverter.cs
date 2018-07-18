@@ -9,9 +9,7 @@ namespace Rubycon.Services
     {
         public static int GetX (string name)
         {
-            string name_number = name.Remove(0, 1);
-
-            int X = int.Parse(name_number);
+            int X = int.Parse(name.Remove(0, 1));
 
             if (X % 2 == 0)
             {
@@ -34,9 +32,7 @@ namespace Rubycon.Services
 
         public static int GetRow(string name)
         {
-            string name_number = name.Remove(0, 1);
-
-            int X = int.Parse(name_number);
+            int X = int.Parse(name.Remove(0, 1));
 
             return X;
         }

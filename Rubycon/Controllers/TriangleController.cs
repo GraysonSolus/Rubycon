@@ -14,16 +14,19 @@ namespace Rubycon.Controllers
     {
         public Triangle GetCoords(string name)
         {
-            int Row = NameConverter.GetRow(name);
+            ArrayList InitialPoint = new ArrayList
+            {
+                NameConverter.GetRow(name),
+                NameConverter.GetY(name)
+            };
 
             Triangle triangle = new Triangle
             {
                 Name = name,
                 PointA = new ArrayList { NameConverter.GetX(name), NameConverter.GetY(name) },
-                PointB = PointCalculator.CalculateB(new ArrayList { NameConverter.GetRow(name), NameConverter.GetY(name) }),
-                PointC = PointCalculator.CalculateC(new ArrayList { NameConverter.GetRow(name), NameConverter.GetY(name) })
+                PointB = PointCalculator.CalculateB(InitialPoint),
+                PointC = PointCalculator.CalculateC(InitialPoint)
             };
-
 
             return triangle;
         }

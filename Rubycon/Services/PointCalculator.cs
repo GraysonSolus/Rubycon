@@ -26,9 +26,11 @@ namespace Rubycon.Services
                 By = Ay + 1;
             }
 
-            ArrayList PointB = new ArrayList();
-            PointB.Add(Bx);
-            PointB.Add(By);
+            ArrayList PointB = new ArrayList
+            {
+                Bx,
+                By
+            };
 
             return PointB;
         }
@@ -49,9 +51,11 @@ namespace Rubycon.Services
                 Cy = Ay + 1;
             }
 
-            ArrayList PointC = new ArrayList();
-            PointC.Add(Cx);
-            PointC.Add(Cy);
+            ArrayList PointC = new ArrayList
+            {
+                Cx,
+                Cy
+            };
 
             return PointC;
         }
