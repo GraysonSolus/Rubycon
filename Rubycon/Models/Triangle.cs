@@ -11,8 +11,8 @@ namespace Rubycon.Models
     {
         [Range(2, 3)]
         public string Name { get; set; }
-        public ArrayList PointA { get; set; }
-        public ArrayList PointB { get; set; }
-        public ArrayList PointC { get; set; }
+        public int[] PointA { get; set; }
+        public int[] PointB { get; set; }
+        public int[] PointC { get; set; }
     }
 }

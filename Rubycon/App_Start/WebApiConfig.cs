@@ -20,7 +20,7 @@ namespace Rubycon
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{name}",
-                defaults: new { id = RouteParameter.Optional }
+                defaults: new { name = RouteParameter.Optional, coordinates = RouteParameter.Optional }
             );
         }
     }
