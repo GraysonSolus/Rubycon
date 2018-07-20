@@ -47,8 +47,9 @@ namespace Rubycon.Controllers
 
 
         //async method to get triangle name from triangle coordinates
-        public async Task<ActionResult> NamePostAsync(string coordinates)
+        public async Task<ActionResult> NamePostAsync(string pointA, string pointB, string pointC)
         {
+            string coordinates = string.Format("{0};{1};{2}", pointA, pointB, pointC);
             ViewBag.TriangleName = await GetTriangleNameAsync(coordinates);
 
             return View("Index");

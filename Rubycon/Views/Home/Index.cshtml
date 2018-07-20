@@ -32,8 +32,12 @@
                                 UpdateTargetId = "result"
                             }))
         {
-            @:Enter Triangle Coordinates (Format: Ax, Ay; Bx, By; Cx, Cy, e.g.: 30, 20; 40, 20; 40, 30): <br />
-            <input type="text" name="coordinates" value=""/>
+            @:Enter Triangle Point A Coordinates (Format: 30, 20): <br />
+            <input type="text" name="pointA" value="" /><br />
+            @:Enter Triangle Point B (Apex) Coordinates (Format: 40, 20): <br />
+            <input type="text" name="pointB" value="" /><br />
+            @:Enter Triangle Point C Coordinates (Format: 40, 30): <br />
+            <input type="text" name="pointC" value="" /><br />
 
             <input type="submit" value="submit" />
         }
