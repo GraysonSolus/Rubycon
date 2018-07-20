@@ -8,22 +8,20 @@
 <script src="~/Scripts/jquery-1.10.2.js"></script>
 <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 
-@using (Ajax.BeginForm("TrianglePost", "Triangle",
+@using (Ajax.BeginForm("TrianglePost", "Home",
                     new AjaxOptions
                     {
-                        HttpMethod = "Get",
                         UpdateTargetId = "result"
                     }))
 {
     @:Triangle Name @Html.EditorFor(x => x.Name)
 
 
+
+
     <input type="submit" value="submit" />
 }
 
 <div id="result">
-    @ViewBag.TriangleName
-    @ViewBag.PointA
-    @ViewBag.PointB
-    @ViewBag.PointC
+    @{Html.RenderPartial("Home");}
 </div>

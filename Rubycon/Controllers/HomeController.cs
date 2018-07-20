@@ -22,23 +22,28 @@ namespace Rubycon.Controllers
             return View();
         }
 
-        [HttpGet]
-        private async void TrianglePost(Triangle tri)
+        public async Task<ActionResult> TrianglePost(Triangle tri)
         {
             string name = tri.Name;
             var task = await GetCoordinatesAsync(name);
 
             ViewBag.TriangleName = task.Name;
-            ViewBag.PointA = task.PointA;
-            ViewBag.PointB = task.PointB;
-            ViewBag.PointC = task.PointC;
+            ViewBag.PointAx = task.PointA.GetValue(0);
+            ViewBag.PointAy = task.PointA.GetValue(1);
+            ViewBag.PointBx = task.PointB.GetValue(0);
+            ViewBag.PointBy = task.PointB.GetValue(1);
+            ViewBag.PointCx = task.PointC.GetValue(0);
+            ViewBag.PointCy = task.PointC.GetValue(1);
+
+            return View("Index");
         }
 
-        async Task<Triangle> GetCoordinatesAsync(string name)
+        public async Task<Triangle> GetCoordinatesAsync(string name)
         {
             Triangle triangle = null;
+            string uriString = string.Format("{0}/{1}", "http://localhost:65185/api/triangle/getcoordinates", name);
 
-            HttpResponseMessage response = await client.GetAsync("http://localhost:65185/api/triangle/getcoordinates/{name}");
+            HttpResponseMessage response = await client.GetAsync(uriString);
             if (response.IsSuccessStatusCode)
             {
                 triangle = await response.Content.ReadAsAsync<Triangle>();
