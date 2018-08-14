@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rubycon", "Rubycon\Rubycon.csproj", "{AEEBB2FA-6AD7-41D9-A92F-B55E11570297}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rubycon.Core", "Rubycon.Core\Rubycon.Core.csproj", "{C0602A84-BEDE-4A04-A47D-CBB87FBCD8C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AEEBB2FA-6AD7-41D9-A92F-B55E11570297}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEEBB2FA-6AD7-41D9-A92F-B55E11570297}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEEBB2FA-6AD7-41D9-A92F-B55E11570297}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0602A84-BEDE-4A04-A47D-CBB87FBCD8C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0602A84-BEDE-4A04-A47D-CBB87FBCD8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0602A84-BEDE-4A04-A47D-CBB87FBCD8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0602A84-BEDE-4A04-A47D-CBB87FBCD8C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
