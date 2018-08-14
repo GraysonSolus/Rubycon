@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Rubycon.Core.Classes
 {
-	class StringConverter : IStringConverter
+	public class StringConverter : IStringConverter
 	{
 		public List<Point> ConvertCoordinates(string coordinates)
 		{
@@ -16,10 +16,37 @@ namespace Rubycon.Core.Classes
 
 		public Point GetStartingPoint(string name)
 		{
-			int Y = char.ToUpper(name[0]) - 65;
-			int X = int.Parse(name.Remove(0, 1));
+			Point p;
 
-			return new Point(X, Y);
+			if (String.IsNullOrEmpty(name))
+			{
+				throw new ArgumentNullException(name, "cannot be null or empty");
+			}
+
+			try
+			{
+				p.Y = char.ToUpper(name[0]) - 65;
+				p.X = int.Parse(name.Remove(0, 1));
+
+				if (!p.IsValid())
+				{
+					throw new ArgumentOutOfRangeException("Point", p, "Point p is not a valid point");
+				}
+			}
+			catch (FormatException e)
+			{
+				Console.WriteLine(e.Message);
+				Console.WriteLine(e.StackTrace);
+				throw;
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e.Message);
+				Console.WriteLine(e.StackTrace);
+				throw;
+			}
+
+			return p;		
 		}
 	}
 }

@@ -11,13 +11,10 @@ namespace Rubycon.Core.Models
 {
 	public class Triangle : IShape
 	{
-		public Triangle(string name)
-		{
-			Name = name;
-		}
-
 		[Range(2, 3)]
 		public string Name { get; set; }
+
+		[Range(3, 3)]
 		public List<Point> Coordinates { get; set; }
 	}
 }

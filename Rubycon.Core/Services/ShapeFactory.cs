@@ -12,7 +12,7 @@ namespace Rubycon.Core
 	{
 		public IShape GetShape(string input)
 		{
-			return new Triangle(input);
+			return new Triangle();
 		}
 	}
 }

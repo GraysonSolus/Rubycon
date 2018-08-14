@@ -15,5 +15,20 @@ namespace Rubycon.Core.Classes
 			X = pX;
 			Y = pY; 
 		}
+
+		public bool IsValid()
+		{
+			if (X < 0 || X > 12) {
+				return false;
+			}
+			else if (Y < 0 || Y > 6)
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
 	}
 }

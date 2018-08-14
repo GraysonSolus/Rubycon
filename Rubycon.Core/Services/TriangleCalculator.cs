@@ -66,8 +66,9 @@ namespace Rubycon.Core.Services
 				PointC
 			};
 
-			Triangle triangle = new Triangle(name)
+			Triangle triangle = new Triangle()
 			{
+				Name = name,
 				Coordinates = Points
 			};
 
